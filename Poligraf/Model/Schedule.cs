@@ -15,11 +15,11 @@ namespace Poligraf.Model
     public partial class Schedule
     {
         public int Id { get; set; }
-        public int PrintMachineId { get; set; }
+        public Nullable<int> PrintMachineId { get; set; }
         public int OrderId { get; set; }
         public int EmployeeId { get; set; }
-        public System.DateTime StartDateTime { get; set; }
-        public System.DateTime FinishDateTime { get; set; }
+        public Nullable<System.DateTime> StartDateTime { get; set; }
+        public Nullable<System.DateTime> FinishDateTime { get; set; }
     
         public virtual Employee Employee { get; set; }
         public virtual Order Order { get; set; }

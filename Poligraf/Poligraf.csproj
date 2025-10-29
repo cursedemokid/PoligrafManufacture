@@ -177,21 +177,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Resource Include="Resources\printer.png" />
-  </ItemGroup>
   <ItemGroup>
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="База данных скрипт.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Resources\c1ee00c4-a645-448a-b1cf-86ee773d5880.jpg" />
   </ItemGroup>
   <ItemGroup>

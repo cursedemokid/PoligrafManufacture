@@ -15,7 +15,7 @@ namespace Poligraf
     /// </summary>
     public partial class App : Application
     {
-        public static PoligrafEntities context = new PoligrafEntities();
+        public static PoligrafEntities1 context = new PoligrafEntities1();
         public static Employee currentEmployee = new Employee();
     }
 }

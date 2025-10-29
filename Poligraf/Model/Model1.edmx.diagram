@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7ac841904711432ca4a8e4f5ed1a52a4" Name="Diagram1">
+      <Diagram DiagramId="8154ac9306554a77a835c93e94ee46f4" Name="Diagram1">
         <EntityTypeShape EntityType="PoligrafModel.Client" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PoligrafModel.Employee" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="PoligrafModel.Order" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />

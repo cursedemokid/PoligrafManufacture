@@ -26,31 +26,40 @@ namespace Poligraf.View.Windows
         public AddEditScheduleWindow()
         {
             InitializeComponent();
+            EditBtn.Visibility = Visibility.Collapsed;
+            EmployeeCmb.ItemsSource = App.context.Employee.ToList();
+            OrderCmb.ItemsSource = App.context.Order.ToList();
+            PrinterCmb.ItemsSource = App.context.PrintMachine.ToList();
         }
         public AddEditScheduleWindow(int Id)
         {
             InitializeComponent();
+            AddBtn.Visibility = Visibility.Collapsed;
             schedule = schedules.FirstOrDefault(s => s.Id == Id);
             EmployeeCmb.ItemsSource = App.context.Employee.ToList();
             OrderCmb.ItemsSource = App.context.Order.ToList();
             PrinterCmb.ItemsSource = App.context.PrintMachine.ToList();
             StartDp.SelectedDate = schedule.StartDateTime;
             FinishDp.SelectedDate = schedule.FinishDateTime;
-            MessageBox.Show("Вы успешно обновили запись");
-            Close();
+            EmployeeCmb.SelectedValue = schedule.EmployeeId;
+            OrderCmb.SelectedValue = schedule.OrderId;
+            PrinterCmb.SelectedValue = schedule.PrintMachineId;
+            
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
             try
             {
+                DateTime startDateTime = Convert.ToDateTime(StartDp.SelectedDate);
+                DateTime finishDateTime = Convert.ToDateTime(FinishDp.SelectedDate);
                 Schedule newSchedule = new Schedule()
                 {
                     EmployeeId = Convert.ToInt32(EmployeeCmb.SelectedValue),
                     OrderId = Convert.ToInt32(OrderCmb.SelectedValue),
                     PrintMachineId = Convert.ToInt32(PrinterCmb.SelectedValue),
-                    StartDateTime = Convert.ToDateTime(StartDp.SelectedDate),
-                    FinishDateTime = Convert.ToDateTime(FinishDp.SelectedDate)
+                    StartDateTime = startDateTime,
+                    FinishDateTime = finishDateTime
                 };
                 App.context.Schedule.Add(newSchedule);
                 App.context.SaveChanges();
@@ -70,6 +79,9 @@ namespace Poligraf.View.Windows
             schedule.PrintMachineId = Convert.ToInt32(PrinterCmb.SelectedValue);
             schedule.StartDateTime = Convert.ToDateTime(StartDp.SelectedDate);
             schedule.FinishDateTime = Convert.ToDateTime(FinishDp.SelectedDate);
+            App.context.SaveChanges();
+            MessageBox.Show("Вы успешно обновили запись");
+            Close();
         }
 
         private void CancelBtn_Click(object sender, RoutedEventArgs e)

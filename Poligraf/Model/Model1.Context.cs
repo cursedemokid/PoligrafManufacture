@@ -13,10 +13,10 @@ namespace Poligraf.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PoligrafEntities : DbContext
+    public partial class PoligrafEntities1 : DbContext
     {
-        public PoligrafEntities()
-            : base("name=PoligrafEntities")
+        public PoligrafEntities1()
+            : base("name=PoligrafEntities1")
         {
         }
     

@@ -49,12 +49,12 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="PrintMachineId" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PrintMachineId" Type="int" />
           <Property Name="OrderId" Type="int" Nullable="false" />
           <Property Name="EmployeeId" Type="int" Nullable="false" />
-          <Property Name="StartDateTime" Type="datetime" Nullable="false" />
-          <Property Name="FinishDateTime" Type="datetime" Nullable="false" />
+          <Property Name="StartDateTime" Type="datetime" />
+          <Property Name="FinishDateTime" Type="datetime" />
         </EntityType>
         <EntityType Name="State">
           <Key>
@@ -112,7 +112,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Schedule_PrintMachine">
-          <End Role="PrintMachine" Type="Self.PrintMachine" Multiplicity="1" />
+          <End Role="PrintMachine" Type="Self.PrintMachine" Multiplicity="0..1" />
           <End Role="Schedule" Type="Self.Schedule" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PrintMachine">
@@ -206,12 +206,12 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="PrintMachineId" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PrintMachineId" Type="Int32" />
           <Property Name="OrderId" Type="Int32" Nullable="false" />
           <Property Name="EmployeeId" Type="Int32" Nullable="false" />
-          <Property Name="StartDateTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="FinishDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StartDateTime" Type="DateTime" Precision="3" />
+          <Property Name="FinishDateTime" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_Schedule_Employee" FromRole="Schedule" ToRole="Employee" />
           <NavigationProperty Name="Order" Relationship="Self.FK_Schedule_Order" FromRole="Schedule" ToRole="Order" />
           <NavigationProperty Name="PrintMachine" Relationship="Self.FK_Schedule_PrintMachine" FromRole="Schedule" ToRole="PrintMachine" />
@@ -273,7 +273,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Schedule_PrintMachine">
-          <End Role="PrintMachine" Type="Self.PrintMachine" Multiplicity="1" />
+          <End Role="PrintMachine" Type="Self.PrintMachine" Multiplicity="0..1" />
           <End Role="Schedule" Type="Self.Schedule" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PrintMachine">
@@ -284,7 +284,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="PoligrafEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="PoligrafEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Client" EntityType="Self.Client" />
           <EntitySet Name="Employee" EntityType="Self.Employee" />
           <EntitySet Name="Order" EntityType="Self.Order" />
@@ -317,7 +317,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище PoligrafModelContainer" CdmEntityContainer="PoligrafEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище PoligrafModelContainer" CdmEntityContainer="PoligrafEntities1">
           <EntitySetMapping Name="Client">
             <EntityTypeMapping TypeName="PoligrafModel.Client">
               <MappingFragment StoreEntitySet="Client">
