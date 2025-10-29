@@ -1,0 +1,40 @@
+﻿<Window x:Class="Poligraf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Poligraf"
+        mc:Ignorable="d"
+        Title="Система учета полиграфных устройств" Height="720" Width="1280" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="C:\Users\navia\source\repos\Poligraf\Poligraf\Resources\printer.png">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="1" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <Image Source="C:\Users\navia\source\repos\Poligraf\Poligraf\Resources\printer.png"/>
+                <Image Grid.Column="2" Source="C:\Users\navia\source\repos\Poligraf\Poligraf\Resources\c1ee00c4-a645-448a-b1cf-86ee773d5880.jpg"/>
+            </Grid>
+            <Button Name="MachineBtn" Grid.Column="2" Content="Печатные станки" Background="White" Click="MachineBtn_Click"/>
+            <Button Name="OrderBtn" Grid.Column="4" Content="Заказы" Background="White" Click="OrderBtn_Click"/>
+            <Button Grid.Column="6" Content="Выход" Background="White" Click="Button_Click"/>
+        </Grid>
+        <Frame Name="MainFrame" Grid.Row="2" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

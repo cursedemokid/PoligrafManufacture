@@ -1,0 +1,44 @@
+﻿<Window x:Class="Poligraf.View.Windows.AddEditScheduleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Poligraf.View.Windows"
+        mc:Ignorable="d"
+            Title="Печатная машина" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Text="Печатная машина"/>
+        <TextBlock Grid.Row="2" Text="Заказ"/>
+        <TextBlock Grid.Row="4" Text="Сотрудник"/>
+        <TextBlock Grid.Row="6" Text="Начало работы"/>
+        <TextBlock Grid.Row="8" Text="Конец"/>
+
+        <ComboBox Name="PrinterCmb" Grid.Row="0" Grid.Column="2" DisplayMemberPath="Model" SelectedValuePath="Id"/>
+        <ComboBox Name="OrderCmb" Grid.Row="2" Grid.Column="2" DisplayMemberPath="Text" SelectedValuePath="Id"/>
+        <ComboBox Name="EmployeeCmb" Grid.Row="4" Grid.Column="2" DisplayMemberPath="LastName" SelectedValuePath="Id"/>
+        <DatePicker Name="StartDp" Grid.Row="6" Grid.Column="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="300" />
+        <DatePicker Name="FinishDp" Grid.Row="8" Grid.Column="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="300"/>
+
+        <Button Name="AddBtn" Grid.Row="10" Content="Добавить" Click="AddBtn_Click"/>
+        <Button Name="EditBtn" Grid.Row="10" Content="Изменить" Click="EditBtn_Click"/>
+        <Button Name="CancelBtn" Grid.Row="10" Grid.Column="2" Content="Отмена" Click="CancelBtn_Click"/>
+    </Grid>
+</Window>

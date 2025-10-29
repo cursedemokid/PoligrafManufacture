@@ -1,0 +1,30 @@
+﻿<Window x:Class="Poligraf.View.Windows.AddEditMachineWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Poligraf.View.Windows"
+        mc:Ignorable="d"
+        Title="Печатная машина" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Text="Название модели"/>
+        <TextBlock Grid.Row="2" Text="Скорость печати в минуту"/>
+        <TextBox Name="ModelTb" Grid.Row="0" Grid.Column="2"/>
+        <TextBox Name="SpeedTb" Grid.Row="2" Grid.Column="2"/>
+        <Button Name="AddBtn" Grid.Row="4" Content="Добавить" Click="AddBtn_Click"/>
+        <Button Name="EditBtn" Grid.Row="4" Content="Изменить" Click="EditBtn_Click"/>
+        <Button Name="CancelBtn" Grid.Row="4" Grid.Column="2" Content="Отмена" Click="CancelBtn_Click"/>
+    </Grid>
+</Window>
