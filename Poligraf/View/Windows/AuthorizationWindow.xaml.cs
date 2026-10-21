@@ -1,4 +1,5 @@
-﻿using Poligraf.Model;
+﻿using ProjectSecurity;
+using Poligraf.Model;
 
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace Poligraf.View.Windows
     /// </summary>
     public partial class AuthorizationWindow : Window
     {
-        List<Employee> employees = App.context.Employee.ToList();
+
         public AuthorizationWindow()
         {
             InitializeComponent();
@@ -29,9 +30,10 @@ namespace Poligraf.View.Windows
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (employees.FirstOrDefault(em => em.Login == LoginTb.Text && em.Password == PasswordPb.Password) != null)
+            Employee currentEmployee = App.context.Employee.FirstOrDefault(em => em.Login == LoginTb.Text);
+            if (currentEmployee != null && PasswordSecurity.Verify(PasswordPb.Password, currentEmployee.Password))
             {
-                Employee currentEmployee = employees.FirstOrDefault(em => em.Login == LoginTb.Text && em.Password == PasswordPb.Password);
+
                 App.currentEmployee = currentEmployee;
                 MessageBox.Show($"Добро пожаловать, {currentEmployee.LastName} {currentEmployee.FirstName}!");
                 MainWindow mainWindow = new MainWindow();
